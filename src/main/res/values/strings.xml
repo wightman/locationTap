@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">locationTap</string>
+    <string name="incidentBtn">Generates location objects for the ListView locationList</string>
+    <string name="save">Save this incident</string>
+    <string name="incident_name">Incident information</string>
+    <string name="property">NB Routes</string>
+
+</resources>
