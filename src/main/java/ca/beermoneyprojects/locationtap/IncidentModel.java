@@ -1,4 +1,4 @@
-package org.wightmanfamily.locationtap;
+package ca.beermoneyprojects.locationtap;
 import ca.beermoneyprojects.incidents.Incident;
 
 public class IncidentModel {

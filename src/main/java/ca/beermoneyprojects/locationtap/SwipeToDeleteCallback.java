@@ -1,4 +1,4 @@
-package org.wightmanfamily.locationtap;
+package ca.beermoneyprojects.locationtap;
 
 import android.content.Context;
 import android.graphics.Canvas;

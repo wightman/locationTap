@@ -1,4 +1,4 @@
-package org.wightmanfamily.locationtap;
+package ca.beermoneyprojects.locationtap;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -44,6 +44,9 @@ public class IncidentAdapter extends RecyclerView.Adapter<IncidentAdapter.Incide
                             listener.onSaveClick(position);
 
                             // change image to checkmark. Reverts when a new element is created :(
+                            // IncidentModel's setIncident_image(R.drawable.ic_baseline_check_circle_24);
+                            IncidentModel item = getData().get(position);
+                            item.setIncident_image(R.drawable.ic_baseline_check_circle_24);
                             incidentIVButton.setImageResource(R.drawable.ic_baseline_check_circle_24);
                             //incidentIVButton.setImageResource(model.getIncident_image());
                             // disable button

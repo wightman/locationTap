@@ -1,4 +1,4 @@
-package org.wightmanfamily.locationtap;
+package ca.beermoneyprojects.locationtap;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -29,7 +29,7 @@ import ca.beermoneyprojects.incidents.*;
 
 
 
-/* locationTap - find your location within a set of linear routes
+/* locationTap - find your location on a linear network
 
     Rick Wightman, Beer Money Projects, 2022
     Technical Sources:
@@ -129,9 +129,12 @@ public class MainActivity extends AppCompatActivity {
                 incidentAdapter.notifyDataSetChanged();
 
                 //mLayout.addView();
-                Snackbar.make(view, strLocation, Snackbar.LENGTH_LONG)
+                /* Snackbar.make(view, strLocation, Snackbar.LENGTH_LONG)
                         .setAction("Action", null).show();
-            }
+                */
+
+                Snackbar.make(view, getExternalFilesDir(null).toString(), Snackbar.LENGTH_LONG)
+                        .setAction("Action", null).show();            }
         });
     }
 
