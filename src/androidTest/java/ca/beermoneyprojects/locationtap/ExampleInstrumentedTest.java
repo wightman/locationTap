@@ -1,4 +1,4 @@
-package org.wightmanfamily.locationtap;
+package ca.beermoneyprojects.locationtap;
 
 import android.content.Context;
 
@@ -21,6 +21,6 @@ public class ExampleInstrumentedTest {
     public void useAppContext() {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getInstrumentation().getTargetContext();
-        assertEquals("org.wightmanfamily.locationtap", appContext.getPackageName());
+        assertEquals("ca.beermoneyprojects.locationtap", appContext.getPackageName());
     }
 }

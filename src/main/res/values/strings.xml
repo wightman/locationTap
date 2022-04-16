@@ -4,5 +4,6 @@
     <string name="save">Save this incident</string>
     <string name="incident_name">Incident information</string>
     <string name="property">NB Routes</string>
-
+    <string name="about">About the App</string>
+    <string name="load">Load a Reference Network</string>
 </resources>

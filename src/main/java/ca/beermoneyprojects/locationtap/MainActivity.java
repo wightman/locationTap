@@ -2,6 +2,7 @@ package ca.beermoneyprojects.locationtap;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.core.app.ActivityCompat;
 
@@ -14,6 +15,9 @@ import android.location.LocationListener;
 import android.location.LocationManager;
 import android.os.Bundle;
 import android.provider.Settings;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
@@ -39,6 +43,7 @@ import ca.beermoneyprojects.incidents.*;
     https://stackoverflow.com/questions/29024058/recyclerview-scrolled-up-down-listener
     https://gist.github.com/codinginflow/7b9dd1c12ba015f2955bdd15b09b1cb1
     https://syntaxbytetutorials.com/android-recyclerview-swipe-to-delete-and-undo-with-itemtouchhelper/
+    https://guides.codepath.com/android/using-the-app-toolbar
     Somethings to aim for:
         https://www.youtube.com/watch?v=yYVIasp5KXo
         https://learntodroid.com/android-file-io-tutorial-with-internal-and-external-storage/
@@ -64,6 +69,10 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        // Sets the Toolbar to act as the ActionBar for this Activity window.
+        // Make sure the toolbar exists in the activity and is not null
+        setSupportActionBar(toolbar);
         constraintLayout = findViewById(R.id.constraintLayout);
         incidentModelArrayList = new ArrayList<>();
         incidentBtn = findViewById(R.id.incidentBtn);
@@ -98,10 +107,43 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(i);
             }
         };
-
+        /*
+         * Check for and load linear network data.
+         * 1. Check for a file in the internal app storage named network.
+         *      - Not present?
+         *          - Initiate file picker for the external app storage
+         *          - Read the file into memory, save it to the internal app file named network
+         * 2. File is present, read it.
+         *
+         * Note that this activity should also be available from the app menu
+         */
         configure_button();
     }
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.appmenu, menu);
+        return true;
+    }
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.load:
+                // User chose the "Load" item, show the file picker
+                // Snackbar.make(view, "load", Snackbar.LENGTH_LONG).setAction("Action", null).show();
+                return true;
 
+            case R.id.about:
+                // User chose the "About" action
+                return true;
+
+            default:
+                // If we got here, the user's action was not recognized.
+                // Invoke the superclass to handle it.
+                return super.onOptionsItemSelected(item);
+
+        }
+    }
     @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
@@ -134,7 +176,8 @@ public class MainActivity extends AppCompatActivity {
                 */
 
                 Snackbar.make(view, getExternalFilesDir(null).toString(), Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();            }
+                        .setAction("Action", null).show();
+            }
         });
     }
 
