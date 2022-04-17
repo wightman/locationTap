@@ -128,21 +128,24 @@ public class MainActivity extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
+            case R.id.about:
+                // User chose the "About" action
+                openAboutWindow();
+                return true;
             case R.id.load:
                 // User chose the "Load" item, show the file picker
                 // Snackbar.make(view, "load", Snackbar.LENGTH_LONG).setAction("Action", null).show();
                 return true;
-
-            case R.id.about:
-                // User chose the "About" action
-                return true;
-
             default:
                 // If we got here, the user's action was not recognized.
                 // Invoke the superclass to handle it.
                 return super.onOptionsItemSelected(item);
 
         }
+    }
+    private void openAboutWindow(){
+        Intent aboutWindow = new Intent(MainActivity.this, AboutWindow.class);
+        startActivity(aboutWindow);
     }
     @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {

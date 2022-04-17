@@ -3,7 +3,7 @@
     package="ca.beermoneyprojects.locationtap">
 
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
-    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
 
     <application
         android:allowBackup="true"
@@ -13,7 +13,11 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.LocationTap">
         <activity
-            android:name="MainActivity"
+            android:name=".AboutWindow"
+            android:theme="@style/Theme.LocationTap.AboutWindow"
+            android:exported="false" />
+        <activity
+            android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

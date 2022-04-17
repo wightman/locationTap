@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginTop="10dp"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAppearance="@color/black"
+        android:text="Find yourself."
+        android:layout_marginBottom="10dp"
+        android:textSize="40dp"
+        android:textStyle="italic">
+    </TextView>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textFontWeight="@integer/material_motion_duration_medium_2"
+        android:text="Version 0.1"
+        android:layout_marginBottom="10dp">
+    </TextView>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textFontWeight="@integer/material_motion_duration_medium_2"
+        android:text="Rick Wightman"
+        android:layout_marginBottom="10dp">
+    </TextView>
+</LinearLayout>

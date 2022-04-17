@@ -1,9 +1,15 @@
 <resources>
     <string name="app_name">locationTap</string>
+    <string name="app_description">Locates you to the closest point on a reference network</string>
     <string name="incidentBtn">Generates location objects for the ListView locationList</string>
     <string name="save">Save this incident</string>
     <string name="incident_name">Incident information</string>
     <string name="property">NB Routes</string>
     <string name="about">About the App</string>
     <string name="load">Load a Reference Network</string>
+    <string name="project_name">locationTap</string>
+    <string name="project_version">0.2</string>
+    <string name="author">Rick Wightman</string>
+    <string name="sidekick">John McNaughton</string>
+    <string name="comment">Based on a course assignment for CS2263 at the University of New Brunswick</string>
 </resources>
